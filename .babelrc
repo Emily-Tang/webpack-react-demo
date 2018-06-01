@@ -1,0 +1,14 @@
+{
+	"presets": [
+		"@babel/preset-react",
+		"@babel/preset-env"
+	],
+	"plugins": [
+		"react-hot-loader/babel",
+		"@babel/plugin-proposal-class-properties",
+		["import", {               //实现按需加载组件
+			"libraryName": "antd",
+			"style": true
+		}]
+	]
+}
