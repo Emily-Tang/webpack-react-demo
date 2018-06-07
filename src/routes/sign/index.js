@@ -17,5 +17,4 @@ class Sign extends React.Component {
 		)
 	}
 }
-
 export default Sign

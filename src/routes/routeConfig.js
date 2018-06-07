@@ -1,4 +1,3 @@
-
 export default {
 	path: '/',
 	component: require('./index.js').default,
