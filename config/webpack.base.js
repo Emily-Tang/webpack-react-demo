@@ -23,12 +23,20 @@ module.exports = {
 			}
 		}, {
 			test: /\.less$/,
-			include: path.join(rootPath, 'src'),
+			// include: path.join(rootPath, 'src'),
 			use: [
 				'style-loader',
 				'css-loader',
-				'less-loader'
+				{
+					loader: 'less-loader',
+					options: {
+						javascriptEnabled: true
+					}
+				}
 			]
+		}, {
+			test: /\.css$/,
+			use: ['style-loader', 'css-loader']
 		}]
 	},
 	plugins: [

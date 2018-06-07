@@ -1,12 +1,13 @@
-import { GET_MARCHANTLIST_SUCCESS, GET_MARCHANTLIST_FAIL } from 'ACTIONS/actionTypes.js';
+import { GET_MARCHANTLIST_SUCCESS, GET_MARCHANTLIST_FAIL, HANDLE_MARCHANTLIST_LOADING } from 'ACTIONS/actionTypes.js';
 
 const initialState = {
-	merchantList: [],
+	marchantList: [],
 	searchData: {
+		keyword: '',   //关键字搜索
 		pageNum: 1,   //当前页码
-		pageSize: 10   //每页条数
+		pageSize: 3   //每页条数
 	},
-	loading: true
+	hasMore: true   //是否有更多数据可以加载
 };
 
 export default function (state = initialState, action) {
@@ -14,6 +15,8 @@ export default function (state = initialState, action) {
 		case GET_MARCHANTLIST_SUCCESS:
 			return {...state, ...action.payload};
 		case GET_MARCHANTLIST_FAIL: 
+			return {...state, ...action.payload};
+		case HANDLE_MARCHANTLIST_LOADING:
 			return {...state, ...action.payload};
 		default: 
 			return state;

@@ -5,8 +5,8 @@ export default {
 	indexRoute: {
 		component: require('./sign').default
 	},
-	onEnter: function (nextState, replace) {
-
+	onEnter: function (nextState, replaceState) {   //onEnter onLeave路由机制
+		//可以在这里做一些权限验证等
 	},
 	childRoutes: [{
 		path: 'zero',
@@ -16,7 +16,7 @@ export default {
 		childRoutes: [{
 			path: 'merchantList',
 			getComponent (nextState, cb) {
-				require.ensure([], (require) => {
+				require.ensure([], (require) => {     //require.ensure(dependencies: String[], callback: function(require), chunkName: String)
 					cb(null, require('./marchantList').default)
 				})
 			}
@@ -28,5 +28,12 @@ export default {
 				})
 			}
 		}]
+	}, {
+		path: 'sign',
+		getComponent (nextState, cb) {
+			require.ensure([], (require) => {
+				cb(null, require('./sign').default);
+			})
+		}
 	}]
 }

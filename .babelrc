@@ -4,10 +4,10 @@
 		"@babel/preset-env"
 	],
 	"plugins": [
-		"react-hot-loader/babel",
-		"@babel/plugin-proposal-class-properties",
+		"react-hot-loader/babel",   //实现局部刷新
+		"@babel/plugin-proposal-class-properties",  //支持javascript新特性
 		["import", {               //实现按需加载组件
-			"libraryName": "antd",
+			"libraryName": "antd-mobile",
 			"style": true
 		}]
 	]

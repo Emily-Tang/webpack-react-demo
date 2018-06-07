@@ -1,8 +1,14 @@
-import { GET_MERCHANTLIST } from '../actionTypes.js';
+import { GET_MARCHANTLIST } from '../actionTypes.js';
 
-export function getMerchantList (params) {
+/*
+	action creator
+*/
+
+
+//获取列表
+export function getMarchantList (params) {
 	return {
-		type: GET_MERCHANTLIST,
+		type: GET_MARCHANTLIST,
 		payload: params
 	};
 }
