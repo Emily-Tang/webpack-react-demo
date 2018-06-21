@@ -1,6 +1,6 @@
 import { put, select } from 'redux-saga/effects';
 import { Toast } from 'antd-mobile';
-import { axiosPost } from 'UTIL/common.js';
+import { axiosPost, request } from 'UTIL/common.js';
 import { GET_MARCHANTLIST_SUCCESS, GET_MARCHANTLIST_FAIL, HANDLE_MARCHANTLIST_LOADING } from 'ACTIONS/actionTypes.js';
 
 //获取列表
